@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="hexo-theme-A4" content="v1.8.8" />
+    <link rel="alternate icon" type="image/webp" href="/img/frog.png">
+    <title>Algorithm exercises | 算法刷题记录</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/frog.png" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Algorithm exercises</a> 
+            <span class="description">刷题日常笔记以及收获</span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+            
+                <li><a href="/project/">摸鱼项目</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Day2"><span class="post-toc-text">Day2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="post-toc-text">第一题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E5%86%85%E5%AE%B9%EF%BC%9A%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB"><span class="post-toc-text">题目内容：编辑距离</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E8%80%83%E7%82%B9%EF%BC%9A"><span class="post-toc-text">题目考点：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E4%B8%80%EF%BC%9A%E8%83%BD%E5%90%A6%E5%8F%91%E7%8E%B0%E5%AD%90%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="post-toc-text">考点一：能否发现子问题：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E4%BA%8C%EF%BC%9A%E8%83%BD%E5%90%A6%E5%86%99%E5%87%BA%E9%80%92%E5%BD%92%E8%A7%A3%EF%BC%9A"><span class="post-toc-text">考点二：能否写出递归解：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E4%B8%89%EF%BC%9A%E8%83%BD%E5%90%A6%E6%84%8F%E8%AF%86%E5%88%B0%E9%80%92%E5%BD%92%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="post-toc-text">考点三：能否意识到递归缺点：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E5%9B%9B%EF%BC%9A%E8%83%BD%E5%90%A6%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="post-toc-text">考点四：能否进行优化：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="post-toc-text">第二题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E5%86%85%E5%AE%B9%EF%BC%9A%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="post-toc-text">题目内容：三数之和</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E8%80%83%E7%82%B9%EF%BC%9A-1"><span class="post-toc-text">题目考点：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E4%B8%80%EF%BC%9A%E5%A4%8D%E6%9D%82%E5%BA%A6%EF%BC%9A"><span class="post-toc-text">考点一：复杂度：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%80%83%E7%82%B9%E4%BA%8C%EF%BC%9A%E5%8E%BB%E9%87%8D%E7%9A%84%E7%90%86%E8%A7%A3"><span class="post-toc-text">考点二：去重的理解</span></a></li></ol></li></ol></li></ol></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><h3 id="题目内容：编辑距离"><a href="#题目内容：编辑距离" class="headerlink" title="题目内容：编辑距离"></a>题目内容：编辑距离</h3><p>这道题目考察的实际上是莱温斯坦距离</p>
+<p>1:考虑从字符串尾部相同的元素，此时只需要去掉尾部</p>
+<p>$$<br>lev(i,j) &#x3D; lev(i-1,j-1)<br>$$<br>2:考虑尾部不同此时有三种做法</p>
+<p>2.1：在i尾部增加一个字符使其尾部相同<br>$$<br>lev(i,j) &#x3D; lev(i,j-1) + 1<br>$$<br>2.2:将i尾部字符删除<br>$$<br>lev(i,j) &#x3D; lev(i-1,j) + 1<br>$$<br>2.3将i尾部字符替换成与j相同的字符<br>$$<br>lev(i,j) &#x3D; lev(i-1,j-1) + 1<br>$$<br>则得到方程<br>$$<br>lev(i,j)&#x3D;\begin{cases}<br>max(i,j) &amp; min(i,j) &#x3D; 0 \<br>min\begin{cases}<br>lev(i-1,j)\<br>lev(i,j-1)\<br>lev(i-1,j-1) + 1_{(a_i)\neq(a_j)}<br>\end{cases}<br>\end{cases}<br>$$<br>这里考虑使用dp动态规划，时间复杂度空间复杂度均为 O(n^2)</p>
+<p>在写动态规划表格的时候少写了一行一列，导致越界，修改后正常跑通。</p>
+<h3 id="题目考点："><a href="#题目考点：" class="headerlink" title="题目考点："></a>题目考点：</h3><h4 id="考点一：能否发现子问题："><a href="#考点一：能否发现子问题：" class="headerlink" title="考点一：能否发现子问题："></a>考点一：能否发现子问题：</h4><p>见前文内容分析</p>
+<h4 id="考点二：能否写出递归解："><a href="#考点二：能否写出递归解：" class="headerlink" title="考点二：能否写出递归解："></a>考点二：能否写出递归解：</h4><p>若某一字符串为零，则每次进行插入。</p>
+<p>若尾字符相同，则看前移一位结果</p>
+<p>若不同，则分别尝试插入，删除，替换，选择最小者，然后+1</p>
+<h4 id="考点三：能否意识到递归缺点："><a href="#考点三：能否意识到递归缺点：" class="headerlink" title="考点三：能否意识到递归缺点："></a>考点三：能否意识到递归缺点：</h4><p>存在大量重复计算，超时</p>
+<h4 id="考点四：能否进行优化："><a href="#考点四：能否进行优化：" class="headerlink" title="考点四：能否进行优化："></a>考点四：能否进行优化：</h4><p>利用dp动态规划，以二维数组形式处理</p>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><h3 id="题目内容：三数之和"><a href="#题目内容：三数之和" class="headerlink" title="题目内容：三数之和"></a>题目内容：三数之和</h3><p>这道题比较好的解决方法是利用双指针法</p>
+<p>即先将数组排序，i从0开始循环，定义left指针在i+1，right指针在结尾处。</p>
+<p>关于移动：如果<br>$$<br>nums[i] + nums[left] +nums[right] &gt; 0<br>$$<br>则说明right大了，right左移</p>
+<p>如果<br>$$<br>nums[i] + nums[left] +nums[right] &lt; 0<br>$$<br>则left小了，left右移。</p>
+<p>直到left和right相遇。</p>
+<p>绷不住了写的时候双指针相遇写反了，md看了半天才看到……</p>
+<h3 id="题目考点：-1"><a href="#题目考点：-1" class="headerlink" title="题目考点："></a>题目考点：</h3><h4 id="考点一：复杂度："><a href="#考点一：复杂度：" class="headerlink" title="考点一：复杂度："></a>考点一：复杂度：</h4><p>排序O(nlogn) 搜素O(n^2)整体上O(n^2)</p>
+<p>空间复杂度O(1)</p>
+<h4 id="考点二：去重的理解"><a href="#考点二：去重的理解" class="headerlink" title="考点二：去重的理解"></a>考点二：去重的理解</h4><p>对a去重，即对i循环时希望去重i和i+1的情况</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">continue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>若为</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nums[i] == nums[i + <span class="number">1</span>]) </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">continue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>则漏掉-1,-1,2</p>
+<p>对找到的b，c去重，应放在找到bc之后，否则会漏掉[0,0,0]</p>
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-03-16</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 Powered by FarzoneILIN, China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>持续做有积累的事情</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
